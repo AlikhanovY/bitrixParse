@@ -50,13 +50,15 @@ for name, link in all_links:
 
 
 link1 = all_links[1][1]
+
 driver.get(link1)
-WebDriverWait(driver, 60).until(
-    EC.presence_of_element_located((By.CLASS_NAME, "landing-block-node-text"))
-)
+print(link1)
+# WebDriverWait(driver, 60).until(
+#     EC.presence_of_element_located((By.CLASS_NAME, "landing-block-node-text"))
+# )
 
 html = driver.page_source
-driver.switch_to.frame(iframe)
+# driver.switch_to.frame(iframe)
 
 with open('article.html', 'w') as f:
     f.write(html)
